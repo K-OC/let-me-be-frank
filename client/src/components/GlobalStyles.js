@@ -9,7 +9,7 @@ export default createGlobalStyle`
     --relish: #b8ff65;
     --darkbrown: #2f0000;
     --header-font: "Mandali";
-    --mustard: ffdb58;
+    --mustard: #ffdb58;
 
 }
 
