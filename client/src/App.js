@@ -8,18 +8,24 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <GlobalStyles />
-        <Header />
-        <Switch>
-          <Route path="/" exact>
-            <ListingGrid />
-          </Route>
-        </Switch>
+        <Wrapper>
+          <GlobalStyles />
+          <Header />
+          <Switch>
+            <Route path="/" exact>
+              <ListingGrid />
+            </Route>
+          </Switch>
+        </Wrapper>
       </BrowserRouter>
     </>
   );
 }
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+`;
 
 export default App;
