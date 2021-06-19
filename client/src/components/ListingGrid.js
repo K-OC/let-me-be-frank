@@ -34,8 +34,7 @@ export const ListingGrid = () => {
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 300px);
-  grid-template-rows: minmax(200px, auto) repeat(5, 400px);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   justify-content: center;
   justify-content: space-around;
   margin-top: 10rem;
