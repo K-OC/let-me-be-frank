@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 const Article = ({ article }) => {
   return (
     <>
@@ -14,11 +14,13 @@ const Article = ({ article }) => {
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled(Link)`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 5rem;
+  text-decoration: none;
 `;
 
 const Image = styled.img`
@@ -39,11 +41,17 @@ const ImageWrapper = styled.div`
 
 const Title = styled.p`
   padding-top: 1rem;
-  text-align: center;
-  max-width: 30vw;
-  max-height: 20vw;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   font-family: var(--header-font);
   font-weight: bold;
   color: var(--meat);
+  max-width: 15rem;
+  /* &:hover {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: visible;
+  } */
 `;
 export default Article;
