@@ -9,7 +9,7 @@ export const ListingGrid = () => {
 
   useEffect(() => {
     fetch(
-      ` https://newsapi.org/v2/everything?q=hotdogs&from=2021-06-01&sortBy=publishedAt&apiKey=${API_KEY}`
+      ` https://newsapi.org/v2/everything?q=hotdog&from=2021-06-01&sortBy=publishedAt&apiKey=${API_KEY}`
     )
       .then((res) => res.json())
       .then((json) => {
