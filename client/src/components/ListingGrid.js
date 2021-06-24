@@ -9,7 +9,7 @@ export const ListingGrid = () => {
 
   useEffect(() => {
     fetch(
-      ` https://newsapi.org/v2/everything?q=hotdog&from=2021-06-01&sortBy=publishedAt&apiKey=${API_KEY}`
+      ` https://newsapi.org/v2/everything?q="hotdog"&from=2021-06-01&sortBy=publishedAt&apiKey=${API_KEY}`
     )
       .then((res) => res.json())
       .then((json) => {
@@ -33,11 +33,12 @@ export const ListingGrid = () => {
 };
 
 const Wrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  /* display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   justify-content: space-around;
   margin-top: 10rem;
   align-items: center;
-  align-content: center;
 `;
