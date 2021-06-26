@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
 import GlobalStyles from "./components/GlobalStyles";
+import {Footer} from "./components/Footer"
 import { ListingGrid } from "./components/ListingGrid";
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
               <ListingGrid />
             </Route>
           </Switch>
+          <Footer/>
         </Wrapper>
       </BrowserRouter>
     </>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Article = ({ article }) => {
   return (
     <>
-      <Wrapper>
+      <Wrapper href={article.url} target="_blank" onClick={(()=> {console.log(article.url)})}>
         <ImageWrapper>
           <Image src={article.urlToImage} />
         </ImageWrapper>
@@ -14,7 +14,7 @@ const Article = ({ article }) => {
   );
 };
 
-const Wrapper = styled(Link)`
+const Wrapper = styled.a`
   display: flex;
   flex-direction: column;
   justify-content: center;
