@@ -21,6 +21,13 @@ const Wrapper = styled(Link)`
   align-items: center;
   margin: 5rem;
   text-decoration: none;
+  transition: transform 0.2s ease;
+  width: fit-content;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 8px 5px var(--relish);
+    border: 5px solid var(--bun);
+  }
 `;
 
 const Image = styled.img`
