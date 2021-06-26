@@ -4,11 +4,19 @@ import { Link } from "react-router-dom";
 const Article = ({ article }) => {
   return (
     <>
-      <Wrapper href={article.url} target="_blank" onClick={(()=> {console.log(article.url)})}>
+      <Wrapper
+        href={article.url}
+        target="_blank"
+        onClick={() => {
+          console.log(article.url);
+        }}
+      >
         <ImageWrapper>
           <Image src={article.urlToImage} />
         </ImageWrapper>
-        <Title>{article.title}</Title>
+        <TitleWrapper>
+          <Title>{article.title}</Title>
+        </TitleWrapper>
       </Wrapper>
     </>
   );
@@ -36,6 +44,17 @@ const Image = styled.img`
   border: 2px solid var(--mustard);
 `;
 
+const TitleWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  max-width: fit-content;
+  max-height: 5rem;
+  min-height: 5rem;
+`;
+
 const ImageWrapper = styled.div`
   max-height: 15rem;
   max-width: 15rem;
@@ -47,18 +66,9 @@ const ImageWrapper = styled.div`
 `;
 
 const Title = styled.p`
-  padding-top: 1rem;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
   font-family: var(--header-font);
   font-weight: bold;
   color: var(--meat);
-  max-width: 15rem;
-  /* &:hover {
-    display: flex;
-    flex-wrap: wrap;
-    overflow: visible;
-  } */
+  max-width: auto;
 `;
 export default Article;

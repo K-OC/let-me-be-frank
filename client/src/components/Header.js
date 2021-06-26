@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <>
       <Wrapper>
-        <Title>
+        <Title to="/" exact>
           <FaHotdog />
           Let Me Be Frank
         </Title>
@@ -35,7 +35,9 @@ const Wrapper = styled.div`
   position: fixed;
 `;
 
-const Title = styled.h1`
+const Title = styled(Link)`
+  text-decoration: none;
+  font-weight: bold;
   font-size: 50px;
   margin: 0;
   color: var(--darkbrown);

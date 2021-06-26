@@ -3,8 +3,9 @@ import styled from "styled-components";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
 import GlobalStyles from "./components/GlobalStyles";
-import {Footer} from "./components/Footer"
+import { Footer } from "./components/Footer";
 import { ListingGrid } from "./components/ListingGrid";
+import { About } from "./components/About";
 function App() {
   return (
     <>
@@ -16,8 +17,11 @@ function App() {
             <Route path="/" exact>
               <ListingGrid />
             </Route>
+            <Route path="/about">
+              <About />
+            </Route>
           </Switch>
-          <Footer/>
+          <Footer />
         </Wrapper>
       </BrowserRouter>
     </>
