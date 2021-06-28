@@ -15,7 +15,7 @@ export const ListingGrid = () => {
       .then((json) => {
         setNews(json.articles);
       })
-      .catch((err) => console.log("err"));
+      .catch((err) => console.log("err", err));
   }, []);
 
   console.log(news);
