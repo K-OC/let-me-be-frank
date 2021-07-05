@@ -20,7 +20,9 @@ export const About = () => {
           dog news. This project uses NewsOrg Api to scrape news about hot dogs.
           The search terms used are "hot-dog", "hotdogs", "hot-dogs", "sausage"
           and "hotdog". Search terms are specifically found in the title of the
-          article.
+          article. As it stands, this website cannot be hosted as the API is not
+          free for production, making this project as pointless as the doughboys
+          themselves.
         </StyledPee>
       </Wrapper>
     </>
