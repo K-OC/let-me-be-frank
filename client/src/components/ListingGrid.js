@@ -3,31 +3,35 @@ import styled from "styled-components";
 import { useLayoutEffect } from "react";
 import Article from "./Article";
 require("dotenv").config();
-const API_KEY = `${process.env.REACT_APP_API_KEY}`;
+const API_KEY = `${process.env.REACT_APP_NYTIMES_API_KEY}`;
 export const ListingGrid = () => {
   const [news, setNews] = useState([]);
 
   useEffect(() => {
     fetch(
-      ` https://newsapi.org/v2/everything?qinTitle="hot-dog"&qInTitle="hotdogs"&qinTitle="hot-dogs"&qInTitle="sausage"&qInTitle="hotdog"&from=2021-06-01&sortBy=publishedAt&language=en&pageSize=100&apiKey=${API_KEY}`
+      `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=hotdogs&sort=newest&api-key=${API_KEY}`
     )
       .then((res) => res.json())
       .then((json) => {
-        setNews(json.articles);
+        console.log(json.response.docs);
+        setNews(json.response.docs);
       })
       .catch((err) => console.log("err", err));
   }, []);
-
   console.log(news);
   return (
     <Wrapper>
-      {news.map((article) => {
-        return (
-          <>
-            <Article article={article} />
-          </>
-        );
-      })}
+      {news === [] ? (
+        <div>loading...</div>
+      ) : (
+        news.map((article) => {
+          return (
+            <>
+              <Article article={article} />
+            </>
+          );
+        })
+      )}
     </Wrapper>
   );
 };
